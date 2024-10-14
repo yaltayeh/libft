@@ -19,6 +19,8 @@
 # include "ft_linkedlist.h"
 # include "ft_printf.h"
 
+int add(int a, int b);
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
