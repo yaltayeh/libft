@@ -14,15 +14,15 @@
 
 void	ft_lstdelone(t_list *item, void (*del)(t_content))
 {
-	if (item && del)
-	{
-		if (item->prev)
-			item->prev->next = NULL;
-		if (item->next)
-			item->next->prev = NULL;
+	if (!item)
+		return ;
+	if (item->prev)
+		item->prev->next = NULL;
+	if (item->next)
+		item->next->prev = NULL;
 
-		ft_lstpush_back(&item->prev, item->next);
+	ft_lstpush_back(&item->prev, item->next);
+	if (del)
 		del(item->content);
-		free(item);
-	}
+	free(item);
 }

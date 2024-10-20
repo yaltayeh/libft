@@ -76,7 +76,8 @@ LIBFT_SOURCES +=	\
 		ft_linked_list/ft_lstpush_back.c	\
 		ft_linked_list/ft_lstinsert.c		\
 		ft_linked_list/ft_lstpop_front.c	\
-		ft_linked_list/ft_lstpop_back.c
+		ft_linked_list/ft_lstpop_back.c		\
+		ft_linked_list/ft_lstsearch.c
 
 LIBFT_SOURCES += \
 		ft_printf/ft_printf.c				\

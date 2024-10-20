@@ -40,4 +40,6 @@ t_list	*ft_lstpop_back(t_list **lst);
 void	ft_lstiter(t_list *lst, void (*f)(t_content));
 t_list	*ft_lstmap(t_list *lst, t_content (*f)(t_content), void (*del)(t_content));
 
+t_list	*ft_lstsearch(t_list *lst, t_content content);
+
 #endif
