@@ -37,24 +37,85 @@ typedef enum e_flags
 	NUMBER = 1 << 6,
 }	t_flags;
 
-int		ft_printf(const char *fmt, ...);
+typedef struct s_printf_data
+{
+	t_flags		flags;
+	va_list		*va;
+	size_t		numbers[2];
+	int			fd;
+}	t_printf_data;
+
+
+int		ft_vprintf(va_list	va, const char *fmt) \
+		__attribute_format_arg__(2);
+
+int		ft_printf(const char *fmt, ...) \
+		__attribute__((format(printf, 1, 2)));
+
+int		ft_fprintf(int fd, const char *fmt, ...) \
+		__attribute__((format(printf, 2, 3)));
+
+int		ft_vfprintf(va_list	va, int fd, const char *fmt) \
+		__attribute_format_arg__(3);
 
 t_flags	ft_flags_parser(const char **fmt, size_t *numbers, t_flags flags);
 
-int		ft_printf_redirect(va_list *ap, char conversions, \
-				t_flags flags, size_t *numbers);
+int		ft_printf_redirect(char conversions, t_printf_data data);
 
-size_t	ft_sharp_apply(int upper);
-size_t	ft_zero_apply(size_t num, size_t count);
-size_t	ft_blank_apply(size_t num, size_t count);
+size_t	ft_sharp_apply(int upper, int fd);
+size_t	ft_zero_apply(size_t num, size_t count, int fd);
+size_t	ft_blank_apply(size_t num, size_t count, int fd);
 
-size_t	ft_char_handle(char c, t_flags flags, size_t *numbers);
-size_t	ft_str_handle(char *s, t_flags flags, size_t *numbers);
-size_t	ft_pointer_handle(unsigned long addr, t_flags flags, size_t *numbers);
-size_t	ft_decimal_handle(int i32, t_flags flags, size_t *numbers);
-size_t	ft_u_decimal_handle(unsigned int u32, t_flags flags, size_t *numbers);
-size_t	ft_hex_handle(unsigned int u32, t_flags flags, \
-						size_t *numbers, int upper);
+size_t	ft_char_handle(t_printf_data data);
+size_t	ft_str_handle(t_printf_data data);
+size_t	ft_pointer_handle(t_printf_data data);
+size_t	ft_decimal_handle(t_printf_data data);
+size_t	ft_u_decimal_handle(t_printf_data data);
+size_t	ft_hex_handle(t_printf_data data, int upper);
 size_t	ft_percent_handle(void);
 
 #endif
+
+
+
+/*
+
+1111
+0101
+1010
+0001
+
+0- 1010
+1- 1111 0101 0001
+
+1010
+1111
+0101
+0001
+
+0- 0101 0001
+1- 1010 1111
+
+0101
+0001
+1010
+1111
+
+0- 0001 1010
+1- 0101 1111
+
+0001
+1010
+0101
+1111
+
+0- 0001 0101
+1- 1010 1111
+
+0001
+0101
+1010
+1111
+
+
+*/

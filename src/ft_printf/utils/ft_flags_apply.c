@@ -12,36 +12,36 @@
 
 #include "ft_printf.h"
 
-size_t	ft_sharp_apply(int upper)
+size_t	ft_sharp_apply(int upper, int fd)
 {
 	if (upper)
-		ft_putstr("0X");
+		ft_putstr_fd("0X", fd);
 	else
-		ft_putstr("0x");
+		ft_putstr_fd("0x", fd);
 	return (2);
 }
 
-size_t	ft_zero_apply(size_t num, size_t count)
+size_t	ft_zero_apply(size_t num, size_t count, int fd)
 {
 	size_t	i;
 
 	i = 0;
 	while (num > count + i)
 	{
-		ft_putchar('0');
+		ft_putchar_fd('0', fd);
 		i++;
 	}
 	return (i);
 }
 
-size_t	ft_blank_apply(size_t num, size_t count)
+size_t	ft_blank_apply(size_t num, size_t count, int fd)
 {
 	size_t	i;
 
 	i = 0;
 	while (num > count + i)
 	{
-		ft_putchar(' ');
+		ft_putchar_fd(' ', fd);
 		i++;
 	}
 	return (i);

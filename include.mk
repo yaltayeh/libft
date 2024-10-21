@@ -81,13 +81,13 @@ LIBFT_SOURCES +=	\
 
 LIBFT_SOURCES += \
 		ft_printf/ft_printf.c				\
-		ft_printf/ft_printf_redirect.c		\
-		ft_printf/ft_flags_parser.c			\
-		ft_printf/ft_handlers.c				\
-		ft_printf/ft_handlers2.c			\
-		ft_printf/ft_decimal_handler.c		\
-		ft_printf/ft_u_decimal_handler.c	\
-		ft_printf/ft_flags_apply.c
+		ft_printf/utils/ft_printf_redirect.c		\
+		ft_printf/utils/ft_flags_parser.c			\
+		ft_printf/utils/ft_handlers.c				\
+		ft_printf/utils/ft_handlers2.c			\
+		ft_printf/utils/ft_decimal_handler.c		\
+		ft_printf/utils/ft_u_decimal_handler.c	\
+		ft_printf/utils/ft_flags_apply.c
 #
 
 # Convert all source files names from .c to .o

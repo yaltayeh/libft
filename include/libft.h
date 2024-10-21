@@ -16,10 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-# include "ft_linked_list.h"
+# include <stdarg.h>
 # include "ft_printf.h"
-
-int add(int a, int b);
+# include "ft_linked_list.h"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

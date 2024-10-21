@@ -12,51 +12,57 @@
 
 #include "ft_printf.h"
 
-size_t	ft_char_handle(char c, t_flags flags, size_t *numbers)
+size_t	ft_char_handle(t_printf_data data)
 {
 	size_t	count;
+	char	c;
 
 	count = 0;
-	if (flags & NUMBER && !(flags & MINUS))
-		count += ft_blank_apply(numbers[0], 1);
-	write(1, &c, 1);
-	if (flags & MINUS)
-		count += ft_blank_apply(numbers[0], 1);
+	c = va_arg(*data.va, int);
+	if (data.flags & NUMBER && !(data.flags & MINUS))
+		count += ft_blank_apply(data.numbers[0], 1, data.fd);
+	write(data.fd, &c, 1);
+	if (data.flags & MINUS)
+		count += ft_blank_apply(data.numbers[0], 1, data.fd);
 	return (count + 1);
 }
 
-size_t	ft_str_handle(char *s, t_flags flags, size_t *numbers)
+size_t	ft_str_handle(t_printf_data data)
 {
 	size_t	count;
 	size_t	len;
+	char	s;
 
+	s = (char *)va_arg(*data.va, char *);
 	count = 0;
 	if (!s)
 	{
 		s = "(null)";
-		if (numbers[1] < 6)
-			numbers[1] = 0;
+		if (data.numbers[1] < 6)
+			data.numbers[1] = 0;
 	}
 	len = ft_strlen(s);
-	if (flags & DOT && len > numbers[1])
-		len = numbers[1];
+	if (data.flags & DOT && len > data.numbers[1])
+		len = data.numbers[1];
 	count += len;
-	if (flags & (NUMBER | ZERO) && !(flags & MINUS))
-		count += ft_blank_apply(numbers[0], count);
+	if (data.flags & (NUMBER | ZERO) && !(data.flags & MINUS))
+		count += ft_blank_apply(data.numbers[0], count, data.fd);
 	write(1, s, len);
-	if (flags & MINUS)
-		count += ft_blank_apply(numbers[0], count);
+	if (data.flags & MINUS)
+		count += ft_blank_apply(data.numbers[0], count, data.fd);
 	return (count);
 }
 
-size_t	ft_pointer_handle(unsigned long addr, t_flags flags, size_t *numbers)
+size_t	ft_pointer_handle(t_printf_data data)
 {
 	char			*hex;
 	char			*str;
 	size_t			count;
+	unsigned long	addr;
 
+	addr = (unsigned long)va_arg(*data.va, void *);
 	if (!addr)
-		str = "(nil)";
+		str = ft_strdup("(nil)");
 	else
 	{
 		hex = ft_itoa_base(addr, HEX_BASE);
@@ -68,12 +74,11 @@ size_t	ft_pointer_handle(unsigned long addr, t_flags flags, size_t *numbers)
 			return (0);
 	}
 	count = ft_strlen(str);
-	if (flags & NUMBER && !(flags & MINUS))
-		count += ft_blank_apply(numbers[0], count);
-	ft_putstr(str);
-	if (flags & MINUS)
-		count += ft_blank_apply(numbers[0], count);
-	if (addr)
-		free(str);
+	if (data.flags & NUMBER && !(data.flags & MINUS))
+		count += ft_blank_apply(data.numbers[0], count, data.fd);
+	ft_putstr_fd(str, data.fd);
+	if (data.flags & MINUS)
+		count += ft_blank_apply(data.numbers[0], count, data.fd);
+	free(str);
 	return (count);
 }

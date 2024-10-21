@@ -51,7 +51,7 @@ char	**ft_split(const char *s, char *delimiters)
 		while (*s && !ft_strchr(delimiters, *s))
 			s++;
 		if (start != s)
-			(((slices[i++] = ft_substr(start, 0, s - start)) == NULL) && \
+			(void)(((slices[i++] = ft_substr(start, 0, s - start)) == NULL) && \
 				({while (--i) free(slices[i]); slices = NULL;}));
 	}
 	return (slices);
