@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_vprintf(va_list va, const char *fmt)
+int	ft_vprintf(const char *fmt, va_list *ap)
 {
-	return (ft_vfprintf(va, 1, fmt));
+	return (ft_vfprintf(1, fmt, ap));
 }

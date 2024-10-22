@@ -19,45 +19,45 @@ static size_t	ft_max(size_t a, size_t b)
 	return (b);
 }
 
-static void	ft_u_decimal_helper1(size_t *count, \
-							size_t *numbers)
+static void	ft_u_decimal_helper1(size_t *count, t_printf_data data)
 {
 	size_t	blank_count;
 
-	blank_count = ft_blank_apply(numbers[0], \
-					ft_max(numbers[1], *count));
-	*count += ft_zero_apply(numbers[1], *count);
+	blank_count = ft_blank_apply(data.numbers[0], \
+					ft_max(data.numbers[1], *count), data.fd);
+	*count += ft_zero_apply(data.numbers[1], *count, data.fd);
 	*count += blank_count;
 }
 
-static void	ft_u_decimal_helper2(size_t *count, \
-								size_t *numbers, t_flags flags)
+static void	ft_u_decimal_helper2(size_t *count, t_printf_data data)
 {
-	if (flags & NUMBER)
-		*count += ft_blank_apply(numbers[0], *count);
-	if (flags & ZERO)
-		*count += ft_zero_apply(numbers[0], *count);
-	else if (flags & DOT)
-		*count += ft_zero_apply(numbers[1], *count);
+	if (data.flags & NUMBER)
+		*count += ft_blank_apply(data.numbers[0], *count, data.fd);
+	if (data.flags & ZERO)
+		*count += ft_zero_apply(data.numbers[0], *count, data.fd);
+	else if (data.flags & DOT)
+		*count += ft_zero_apply(data.numbers[1], *count, data.fd);
 }
 
-size_t	ft_u_decimal_handle(unsigned int u32, t_flags flags, size_t *numbers)
+size_t	ft_u_decimal_handle(t_printf_data data)
 {
-	char	*decimal;
-	size_t	count;
+	char			*decimal;
+	size_t			count;
+	unsigned int	u32;
 
+	u32 = va_arg(*data.ap, unsigned int);
 	count = 0;
 	decimal = ft_itoa_base((unsigned long)u32, DECIMAL_BASE);
-	if (u32 || !(flags & DOT))
+	if (u32 || !(data.flags & DOT))
 		count += ft_strlen(decimal);
-	if ((flags & (ZERO | NUMBER)) && (flags & DOT))
-		ft_u_decimal_helper1(&count, numbers);
+	if ((data.flags & (ZERO | NUMBER)) && (data.flags & DOT))
+		ft_u_decimal_helper1(&count, data);
 	else
-		ft_u_decimal_helper2(&count, numbers, flags);
-	if (u32 || !(flags & DOT))
+		ft_u_decimal_helper2(&count, data);
+	if (u32 || !(data.flags & DOT))
 		ft_putstr(decimal);
-	if (flags & MINUS)
-		count += ft_blank_apply(numbers[0], count);
+	if (data.flags & MINUS)
+		count += ft_blank_apply(data.numbers[0], count, data.fd);
 	free(decimal);
 	return (count);
 }

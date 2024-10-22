@@ -31,7 +31,7 @@ size_t	ft_hex_handle(t_printf_data data, int upper)
 	size_t			len;
 	unsigned int	u32;
 
-	u32 = va_arg(*data.va, unsigned int);
+	u32 = va_arg(*data.ap, unsigned int);
 	count = 0;
 	if (upper)
 		hex = ft_itoa_base(u32, HEX_BASE_UPPER);

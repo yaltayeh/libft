@@ -12,13 +12,13 @@
 
 #include "ft_printf.h"
 
-int	ft_vfprintf(va_list	va, int fd, const char *fmt)
+int	ft_vfprintf(int fd, const char *fmt, va_list *ap)
 {
 	int				count;
 	t_printf_data	data;
 
 	ft_bzero(&data, sizeof(data));
-	data.va = &va;
+	data.ap = ap;
 	data.fd = fd;
 	count = 0;
 	while (*fmt)

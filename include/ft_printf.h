@@ -40,14 +40,13 @@ typedef enum e_flags
 typedef struct s_printf_data
 {
 	t_flags		flags;
-	va_list		*va;
+	va_list		*ap;
 	size_t		numbers[2];
 	int			fd;
 }	t_printf_data;
 
 
-int		ft_vprintf(va_list	va, const char *fmt) \
-		__attribute_format_arg__(2);
+int		ft_vprintf(const char *fmt, va_list	*ap);
 
 int		ft_printf(const char *fmt, ...) \
 		__attribute__((format(printf, 1, 2)));
@@ -55,8 +54,8 @@ int		ft_printf(const char *fmt, ...) \
 int		ft_fprintf(int fd, const char *fmt, ...) \
 		__attribute__((format(printf, 2, 3)));
 
-int		ft_vfprintf(va_list	va, int fd, const char *fmt) \
-		__attribute_format_arg__(3);
+int		ft_vfprintf(int fd, const char *fmt, va_list *ap);
+
 
 t_flags	ft_flags_parser(const char **fmt, size_t *numbers, t_flags flags);
 

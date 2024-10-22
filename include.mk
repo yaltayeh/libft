@@ -81,6 +81,9 @@ LIBFT_SOURCES +=	\
 
 LIBFT_SOURCES += \
 		ft_printf/ft_printf.c				\
+		ft_printf/ft_fprintf.c				\
+		ft_printf/ft_vprintf.c				\
+		ft_printf/ft_vfprintf.c				\
 		ft_printf/utils/ft_printf_redirect.c		\
 		ft_printf/utils/ft_flags_parser.c			\
 		ft_printf/utils/ft_handlers.c				\

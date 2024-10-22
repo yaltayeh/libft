@@ -18,7 +18,7 @@ size_t	ft_char_handle(t_printf_data data)
 	char	c;
 
 	count = 0;
-	c = va_arg(*data.va, int);
+	c = va_arg(*data.ap, int);
 	if (data.flags & NUMBER && !(data.flags & MINUS))
 		count += ft_blank_apply(data.numbers[0], 1, data.fd);
 	write(data.fd, &c, 1);
@@ -31,9 +31,9 @@ size_t	ft_str_handle(t_printf_data data)
 {
 	size_t	count;
 	size_t	len;
-	char	s;
+	char	*s;
 
-	s = (char *)va_arg(*data.va, char *);
+	s = (char *)va_arg(*data.ap, char *);
 	count = 0;
 	if (!s)
 	{
@@ -60,7 +60,7 @@ size_t	ft_pointer_handle(t_printf_data data)
 	size_t			count;
 	unsigned long	addr;
 
-	addr = (unsigned long)va_arg(*data.va, void *);
+	addr = (unsigned long)va_arg(*data.ap, void *);
 	if (!addr)
 		str = ft_strdup("(nil)");
 	else
