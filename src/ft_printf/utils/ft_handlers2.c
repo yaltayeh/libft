@@ -49,8 +49,8 @@ size_t	ft_hex_handle(t_printf_data data, int upper)
 	return (count);
 }
 
-size_t	ft_percent_handle(void)
+size_t	ft_percent_handle(t_printf_data data)
 {
-	ft_putchar('%');
+	ft_putchar_fd('%', data.fd);
 	return (1);
 }

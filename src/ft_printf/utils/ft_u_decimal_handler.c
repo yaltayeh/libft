@@ -55,7 +55,7 @@ size_t	ft_u_decimal_handle(t_printf_data data)
 	else
 		ft_u_decimal_helper2(&count, data);
 	if (u32 || !(data.flags & DOT))
-		ft_putstr(decimal);
+		ft_putstr_fd(decimal, data.fd);
 	if (data.flags & MINUS)
 		count += ft_blank_apply(data.numbers[0], count, data.fd);
 	free(decimal);

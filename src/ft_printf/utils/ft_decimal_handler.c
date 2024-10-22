@@ -28,11 +28,11 @@ static void	ft_decimal_helper1(int i32, size_t *count, t_printf_data data)
 	blank_count = ft_blank_apply(data.numbers[0], \
 					ft_max(data.numbers[1], *count) + is_sign, data.fd);
 	if (i32 < 0)
-		write(1, "-", 1);
+		write(data.fd, "-", 1);
 	else if (data.flags & PLUS)
-		write(1, "+", 1);
+		write(data.fd, "+", 1);
 	else if (data.flags & SPACE)
-		write(1, " ", 1);
+		write(data.fd, " ", 1);
 	*count += ft_zero_apply(data.numbers[1], *count, data.fd);
 	*count += is_sign;
 	*count += blank_count;
@@ -48,11 +48,11 @@ static void	ft_decimal_helper2(int i32, size_t *count, t_printf_data data)
 	if (data.flags & NUMBER)
 		*count += ft_blank_apply(data.numbers[0], *count + is_blank, data.fd);
 	if (i32 < 0)
-		write(1, "-", 1);
+		write(data.fd, "-", 1);
 	else if (data.flags & PLUS)
-		write(1, "+", 1);
+		write(data.fd, "+", 1);
 	else if (data.flags & SPACE)
-		write(1, " ", 1);
+		write(data.fd, " ", 1);
 	if (data.flags & ZERO)
 		*count += ft_zero_apply(data.numbers[0], *count + is_blank, data.fd);
 	else if (data.flags & DOT)
@@ -76,7 +76,7 @@ size_t	ft_decimal_handle(t_printf_data data)
 	else
 		ft_decimal_helper2(i32, &count, data);
 	if (i32 || !(data.flags & DOT))
-		ft_putstr(decimal);
+		ft_putstr_fd(decimal, data.fd);
 	if (data.flags & MINUS)
 		count += ft_blank_apply(data.numbers[0], count, data.fd);
 	free(decimal);

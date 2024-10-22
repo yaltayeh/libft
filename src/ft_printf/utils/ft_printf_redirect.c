@@ -29,6 +29,6 @@ int	ft_printf_redirect(char conversions, t_printf_data data)
 	else if (conversions == 'u')
 		return (ft_u_decimal_handle(data));
 	else if (conversions == '%')
-		return (ft_percent_handle());
+		return (ft_percent_handle(data));
 	return (0);
 }

@@ -47,7 +47,7 @@ size_t	ft_str_handle(t_printf_data data)
 	count += len;
 	if (data.flags & (NUMBER | ZERO) && !(data.flags & MINUS))
 		count += ft_blank_apply(data.numbers[0], count, data.fd);
-	write(1, s, len);
+	write(data.fd, s, len);
 	if (data.flags & MINUS)
 		count += ft_blank_apply(data.numbers[0], count, data.fd);
 	return (count);

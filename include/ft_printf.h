@@ -71,7 +71,7 @@ size_t	ft_pointer_handle(t_printf_data data);
 size_t	ft_decimal_handle(t_printf_data data);
 size_t	ft_u_decimal_handle(t_printf_data data);
 size_t	ft_hex_handle(t_printf_data data, int upper);
-size_t	ft_percent_handle(void);
+size_t	ft_percent_handle(t_printf_data data);
 
 #endif
 
