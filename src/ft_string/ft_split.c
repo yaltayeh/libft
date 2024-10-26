@@ -12,21 +12,21 @@
 
 #include "libft.h"
 
-static char	**init_slices(const char *s, char *delimiters)
+static char	**init_slices(const char *s, char *d)
 {
 	char		**slices;
 	const char	*start;
 	size_t		count;
 
-	if (!s || !delimiters)
+	if (!s || !d)
 		return (NULL);
 	count = 0;
 	while (*s)
 	{
-		while (*s && ft_strchr(delimiters, *s))
+		while (*s && ft_strchr(d, *s))
 			s++;
 		start = s;
-		while (*s && !ft_strchr(delimiters, *s))
+		while (*s && !ft_strchr(d, *s))
 			s++;
 		if (start != s)
 			count++;
@@ -35,20 +35,20 @@ static char	**init_slices(const char *s, char *delimiters)
 	return (slices);
 }
 
-char	**ft_split(const char *s, char *delimiters)
+char	**ft_split(const char *s, char *d)
 {
 	char		**slices;
 	const char	*start;
 	size_t		i;
 
 	i = 0;
-	slices = init_slices(s, delimiters);
+	slices = init_slices(s, d);
 	while (slices && *s)
 	{
-		while (*s && ft_strchr(delimiters, *s))
+		while (*s && ft_strchr(d, *s))
 			s++;
 		start = s;
-		while (*s && !ft_strchr(delimiters, *s))
+		while (*s && !ft_strchr(d, *s))
 			s++;
 		if (start != s)
 			(void)(((slices[i++] = ft_substr(start, 0, s - start)) == NULL) && \

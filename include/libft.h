@@ -69,4 +69,8 @@ int		ft_putstr_fd(char *s, int fd);
 int		ft_putendl_fd(char *s, int fd);
 int		ft_putnbr_fd(int n, int fd);
 
+size_t	ft_len(const void **lst);
+char	*ft_strtok(char *s, const char *d);
+int		ft_strcheck(const char *str, int (*f)(int));
+
 #endif

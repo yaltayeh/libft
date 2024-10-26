@@ -43,7 +43,10 @@ LIBFT_SOURCES =	\
 		ft_string/ft_strtrim.c			\
 		ft_string/ft_substr.c			\
 		ft_string/ft_tolower.c			\
-		ft_string/ft_toupper.c
+		ft_string/ft_toupper.c			\
+		ft_string/ft_len.c				\
+		ft_string/ft_strtok.c			\
+		ft_string/ft_strcheck.c
 
 LIBFT_SOURCES +=	\
 		ft_memory/ft_bzero.c			\

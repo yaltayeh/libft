@@ -4,7 +4,7 @@ t_list	*ft_lstsearch(t_list *lst, t_content content)
 {
 	while (lst)
 	{
-		if (!ft_memcmp(&lst->content, &content, sizeof(t_content)))
+		if (lst->content.i64 == content.i64)
 			return (lst);
 		lst = lst->next;
 	}
