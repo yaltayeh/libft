@@ -94,6 +94,11 @@ LIBFT_SOURCES += \
 		ft_printf/utils/ft_decimal_handler.c		\
 		ft_printf/utils/ft_u_decimal_handler.c	\
 		ft_printf/utils/ft_flags_apply.c
+
+LIBFT_SOURCES += \
+		get_next_line/get_next_line.c		\
+		get_next_line/get_next_line_utils.c	\
+
 #
 
 # Convert all source files names from .c to .o
