@@ -46,6 +46,7 @@ LIBFT_SOURCES =	\
 		ft_string/ft_toupper.c			\
 		ft_string/ft_len.c				\
 		ft_string/ft_strtok.c			\
+		ft_string/ft_atoi.c					\
 		ft_string/ft_strcheck.c
 
 LIBFT_SOURCES +=	\
@@ -60,7 +61,6 @@ LIBFT_SOURCES +=	\
 LIBFT_SOURCES +=	\
 		ft_io/ft_putchar.c				\
 		ft_io/ft_putstr.c				\
-		ft_io/ft_atoi.c					\
 		ft_io/ft_putchar_fd.c			\
 		ft_io/ft_putstr_fd.c			\
 		ft_io/ft_putendl_fd.c			\

@@ -23,16 +23,16 @@ t_flags	ft_flags_parser(const char **fmt, size_t *numbers, t_flags flags)
 	{
 		if (ft_isdigit(*flag) && *flag != '0')
 		{
-			numbers[0] = ft_atoi_track(fmt);
+			numbers[0] = ft_atou_r(fmt);
 			flags |= NUMBER;
 		}
 		else
 		{
 			*fmt = *fmt + 1;
 			if (*flag == '0' || *flag == '-')
-				numbers[0] = ft_atoi_track(fmt);
+				numbers[0] = ft_atou_r(fmt);
 			else if (*flag == '.')
-				numbers[1] = ft_atoi_track(fmt);
+				numbers[1] = ft_atou_r(fmt);
 			flags |= (1 << (flag - flags_character));
 		}
 		flag = ft_strchr(flags_character, **fmt);
