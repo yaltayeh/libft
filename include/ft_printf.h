@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdio.h>
 # include "libft.h"
 
 # define CONVENTIONS_CHARACTERS "cspdiuxX%"
