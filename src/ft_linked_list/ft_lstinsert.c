@@ -1,8 +1,8 @@
 #include "libft.h"
 
-void	ft_lstinsert(t_list **lst, t_list *new)
+void	ft_lstinsert(t_node **lst, t_node *new)
 {
-	t_list	*tmp;
+	t_node	*tmp;
 
 	tmp = NULL;
 	if (*lst)

@@ -1,9 +1,9 @@
 #include "libft.h"
 
-t_list	*ft_lstpop_front(t_list **lst)
+t_node	*ft_lstpop_front(t_node **lst)
 {
-	t_list	*head;
-	t_list	*item;
+	t_node	*head;
+	t_node	*item;
 
 	head = *lst;
 	if (!head)

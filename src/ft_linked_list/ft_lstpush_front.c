@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_lstpush_front(t_list **lst, t_list *new)
+void	ft_lstpush_front(t_node **lst, t_node *new)
 {
 	if (!lst || !new)
 		return ;
