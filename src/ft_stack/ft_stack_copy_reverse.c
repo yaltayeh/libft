@@ -1,12 +1,14 @@
 #include "ft_stack.h"
 
-t_stack	*ft_stack_copy(t_stack *stack)
+t_stack	*ft_stack_copy_reverse(t_stack *stack)
 {
 	t_node		*cur;
 	t_node		*new_node;
-	t_data_type new_content;
 	t_stack		*new_stack;
+	t_data_type	new_content;
 
+	if (!stack)
+		return (NULL);
 	new_stack = ft_init_stack(stack->cmp, stack->copy);
 	if (!new_stack)
 		return (NULL);
@@ -22,7 +24,7 @@ t_stack	*ft_stack_copy(t_stack *stack)
 			ft_stack_clear(&new_stack);
 			return (NULL);
 		}
-		ft_stack_tail_push(new_stack, new_node);
+		ft_stack_head_push(new_stack, new_node);
 		cur = cur->next;
 	}
 	return (new_stack);

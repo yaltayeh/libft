@@ -7,6 +7,11 @@ typedef union test
 	void *p;
 } t_test;
 
+struct test
+{
+	int	a;
+	int	b;
+};
 
 int	op(int n1, int n2, int (*_op)())
 {
@@ -40,7 +45,7 @@ int	main(void)
 {
 	int ret;
 
-	ret = op(10, 0, div);
+	ret = op(10, 10, add);
 	printf("%d \n", ret);
 	return (0);
 }

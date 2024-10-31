@@ -1,6 +1,6 @@
 #include "ft_stack.h"
 
-t_stack	*ft_init_stack(int	(*cmp)(), void *(*copy)(), void (*del)())
+t_stack	*ft_init_stack(int (*cmp)(), t_data_type (*copy)())
 {
 	t_stack	*stack;
 
@@ -11,6 +11,5 @@ t_stack	*ft_init_stack(int	(*cmp)(), void *(*copy)(), void (*del)())
 	stack->tail = NULL;
 	stack->cmp = cmp;
 	stack->copy = copy;
-	stack->del = del;
 	return (stack);
 }

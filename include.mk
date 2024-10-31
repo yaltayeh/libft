@@ -46,7 +46,7 @@ LIBFT_SOURCES =	\
 		ft_string/ft_toupper.c			\
 		ft_string/ft_len.c				\
 		ft_string/ft_strtok.c			\
-		ft_string/ft_atoi.c					\
+		ft_string/ft_atoi.c				\
 		ft_string/ft_strcheck.c
 
 LIBFT_SOURCES +=	\
@@ -66,38 +66,42 @@ LIBFT_SOURCES +=	\
 		ft_io/ft_putendl_fd.c			\
 		ft_io/ft_putnbr_fd.c			\
 		ft_io/ft_putbase_fd.c
-		
-LIBFT_SOURCES +=	\
-		ft_linked_list/ft_lstnew.c			\
-		ft_linked_list/ft_lstsize.c			\
-		ft_linked_list/ft_lstlast.c			\
-		ft_linked_list/ft_lstdelone.c		\
-		ft_linked_list/ft_lstclear.c		\
-		ft_linked_list/ft_lstiter.c			\
-		ft_linked_list/ft_lstmap.c			\
-		ft_linked_list/ft_lstpush_front.c	\
-		ft_linked_list/ft_lstpush_back.c	\
-		ft_linked_list/ft_lstinsert.c		\
-		ft_linked_list/ft_lstpop_front.c	\
-		ft_linked_list/ft_lstpop_back.c		\
-		ft_linked_list/ft_lstsearch.c
 
 LIBFT_SOURCES += \
-		ft_printf/ft_printf.c				\
-		ft_printf/ft_fprintf.c				\
-		ft_printf/ft_vprintf.c				\
-		ft_printf/ft_vfprintf.c				\
-		ft_printf/utils/ft_printf_redirect.c		\
-		ft_printf/utils/ft_flags_parser.c			\
-		ft_printf/utils/ft_handlers.c				\
+		ft_printf/ft_printf.c					\
+		ft_printf/ft_fprintf.c					\
+		ft_printf/ft_vprintf.c					\
+		ft_printf/ft_vfprintf.c					\
+		ft_printf/utils/ft_printf_redirect.c	\
+		ft_printf/utils/ft_flags_parser.c		\
+		ft_printf/utils/ft_handlers.c			\
 		ft_printf/utils/ft_handlers2.c			\
-		ft_printf/utils/ft_decimal_handler.c		\
+		ft_printf/utils/ft_decimal_handler.c	\
 		ft_printf/utils/ft_u_decimal_handler.c	\
 		ft_printf/utils/ft_flags_apply.c
 
 LIBFT_SOURCES += \
 		get_next_line/get_next_line.c		\
 		get_next_line/get_next_line_utils.c	\
+
+LIBFT_SOURCES += \
+		ft_stack/ft_init_node.c			\
+		ft_stack/ft_init_stack.c			\
+		\
+		ft_stack/ft_stack_head_pop.c		\
+		ft_stack/ft_stack_head_push.c		\
+		ft_stack/ft_stack_head_iter.c		\
+		\
+		ft_stack/ft_stack_tail_push.c		\
+		ft_stack/ft_stack_tail_pop.c		\
+		ft_stack/ft_stack_tail_iter.c		\
+		\
+		ft_stack/ft_stack_copy_reverse.c	\
+		ft_stack/ft_stack_copy.c			\
+		ft_stack/ft_stack_mapi.c			\
+		\
+		ft_stack/ft_stack_delnode.c			\
+		ft_stack/ft_stack_clear.c			\
 
 #
 

@@ -18,7 +18,6 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include "ft_printf.h"
-# include "ft_linked_list.h"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

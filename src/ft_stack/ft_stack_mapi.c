@@ -1,28 +1,18 @@
 #include "ft_stack.h"
 
-t_stack	*ft_stack_mapi(t_stack *stack, t_content (*f)())
+t_stack	*ft_stack_mapi(t_stack *stack, void (*f)())
 {
-	size_t	i;
-	t_node	*head;
-	t_content	tmp;
-	t_node		*node;
 	t_stack		*new_stack;
+	int			err;
 
-	i = 0;
-	head = stack->head;
-	
-	while (head)
+	new_stack = ft_stack_copy(stack);
+	if (!new_stack)
+		return (NULL);
+	err = ft_stack_head_iter(new_stack, f);
+	if (err != 0)
 	{
-		tmp = stack->__f(head->content, i);
-		node = ft_newnode(tmp);
-		if (!node)
-		{
-			stack->del(tmp);
-			ft_stack_clear(&);
-			return (NULL);
-		}
-		head = head->next;
-		i++;
+		ft_stack_clear(&new_stack);
+		return (NULL);
 	}
-
+	return (new_stack);
 }
