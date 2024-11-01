@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 # include "ft_printf.h"
 # include "ft_stack.h"
 
@@ -44,6 +45,7 @@ char	*ft_strrchr(const char *s, int c);
 
 int		ft_atoi(const char *nptr);
 int     ft_atoi_r(const char **p_nptr);
+int		ft_atoi_save_r(const char **p_nptr, int *res);
 size_t	ft_atou(const char *nptr);
 size_t	ft_atou_r(const char **p_nptr);
 
