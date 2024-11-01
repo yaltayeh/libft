@@ -70,7 +70,7 @@ int		ft_stack_tail_iter(t_stack *stack, int (*f)());
 t_stack	*ft_stack_copy(t_stack *stack);
 t_stack	*ft_stack_copy_reverse(t_stack *stack);
 
-t_stack	*ft_stack_mapi(t_stack *stack, void (*f)());
+t_stack	*ft_stack_mapi(t_stack *stack, int (*f)());
 
 void	ft_stack_delnode(t_node *node);
 void	ft_stack_clear(t_stack **stack);

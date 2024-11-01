@@ -1,6 +1,6 @@
 #include "ft_stack.h"
 
-t_stack	*ft_stack_mapi(t_stack *stack, void (*f)())
+t_stack	*ft_stack_mapi(t_stack *stack, int (*f)())
 {
 	t_stack		*new_stack;
 	int			err;
