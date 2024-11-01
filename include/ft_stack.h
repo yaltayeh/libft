@@ -61,11 +61,11 @@ void	ft_stack_tail_push(t_stack *stack, t_node *node);
 t_node	*ft_stack_head_pop(t_stack *stack);
 t_node	*ft_stack_tail_pop(t_stack *stack);
 
-void	ft_inject_data_w0(int w0, size_t i, int *err);
-void	ft_inject_data_x0(void *x0, size_t i, int *err);
+void	ft_inject_data_w0(int w0, size_t i);
+void	ft_inject_data_x0(void *x0, size_t i);
 
-int		ft_stack_head_iter(t_stack *stack, void (*f)());
-int		ft_stack_tail_iter(t_stack *stack, void (*f)());
+int		ft_stack_head_iter(t_stack *stack, int (*f)());
+int		ft_stack_tail_iter(t_stack *stack, int (*f)());
 
 t_stack	*ft_stack_copy(t_stack *stack);
 t_stack	*ft_stack_copy_reverse(t_stack *stack);
