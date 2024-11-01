@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    include.mk                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/11/02 00:46:54 by yaltayeh          #+#    #+#              #
+#    Updated: 2024/11/02 00:46:57 by yaltayeh         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # If LIBFTDIR not define set '.',
 # else Set before include,
 # because include libft from anywhere
@@ -100,6 +112,7 @@ LIBFT_SOURCES += \
 		ft_stack/ft_stack_tail_pop.c		\
 		ft_stack/ft_stack_tail_iter.c		\
 											\
+		ft_stack/ft_stack_copy_fn_caller.c	\
 		ft_stack/ft_stack_copy_reverse.c	\
 		ft_stack/ft_stack_copy.c			\
 		ft_stack/ft_stack_mapi.c			\
