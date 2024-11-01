@@ -53,6 +53,8 @@ t_node	*ft_init_node(t_data data, void (*del)());
 
 t_stack	*ft_init_stack(int data_type, int (*cmp)(), t_data (*copy)());
 
+size_t	ft_stack_size(t_stack *stack);
+
 void	ft_stack_head_push(t_stack *stack, t_node *node);
 void	ft_stack_tail_push(t_stack *stack, t_node *node);
 

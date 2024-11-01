@@ -88,6 +88,7 @@ LIBFT_SOURCES += \
 LIBFT_SOURCES += \
 		ft_stack/ft_init_node.c				\
 		ft_stack/ft_init_stack.c			\
+		ft_stack/ft_stack_size.c			\
 											\
 		ft_stack/ft_injectors.c				\
 											\
