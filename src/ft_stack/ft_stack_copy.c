@@ -4,10 +4,10 @@ t_stack	*ft_stack_copy(t_stack *stack)
 {
 	t_node		*cur;
 	t_node		*new_node;
-	t_data_type new_content;
+	t_data new_content;
 	t_stack		*new_stack;
 
-	new_stack = ft_init_stack(stack->cmp, stack->copy);
+	new_stack = ft_init_stack(stack->data_type, stack->cmp, stack->copy);
 	if (!new_stack)
 		return (NULL);
 	cur = stack->head;

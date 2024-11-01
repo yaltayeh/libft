@@ -25,12 +25,12 @@ static char	*error_handling_gnl(char **new_line, char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	buffer[FOPEN_MAX][BUFFER_SIZE + 1];
+	static char	buffer[FD_MAX][BUFFER_SIZE + 1];
 	char		*new_line;
 	ssize_t		bytes_read;
 
 	new_line = NULL;
-	if (fd > FOPEN_MAX || fd < 0)
+	if (fd > FD_MAX || fd < 0)
 		return (NULL);
 	if (!buffer[fd][0])
 		bytes_read = read(fd, buffer[fd], BUFFER_SIZE);

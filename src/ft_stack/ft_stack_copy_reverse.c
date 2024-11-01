@@ -5,11 +5,11 @@ t_stack	*ft_stack_copy_reverse(t_stack *stack)
 	t_node		*cur;
 	t_node		*new_node;
 	t_stack		*new_stack;
-	t_data_type	new_content;
+	t_data	new_content;
 
 	if (!stack)
 		return (NULL);
-	new_stack = ft_init_stack(stack->cmp, stack->copy);
+	new_stack = ft_init_stack(stack->data_type, stack->cmp, stack->copy);
 	if (!new_stack)
 		return (NULL);
 	cur = stack->head;

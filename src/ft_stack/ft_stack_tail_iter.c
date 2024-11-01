@@ -2,21 +2,25 @@
 
 int	ft_stack_tail_iter(t_stack *stack, void (*f)())
 {
-	t_node	*tail;
+	t_node	*cur;
 	size_t	i;
 	int		err;
-	void	(*_f)(t_data_type, size_t, int *);
 
-	tail = stack->tail;
-	_f = f;
+	cur = stack->tail;
 	i = 0;
-	while (tail)
+	while (cur)
 	{
 		err = 0;
-		_f(tail->data, i, &err);
+		if (stack->data_type == FT_W0)
+			ft_inject_data_w0(cur->data.i32, i, &err);
+		else if (stack->data_type == FT_X0)
+			ft_inject_data_x0(cur->data.ptr, i, &err);
+		else
+			return (-1);
+		f();
 		if (err != 0)
 			return (err);
-		tail = tail->prev;
+		cur = cur->prev;
 		i++;
 	}
 	return (0);

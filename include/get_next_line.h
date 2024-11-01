@@ -21,6 +21,8 @@
 #  define BUFFER_SIZE 4096
 # endif
 
+# define FD_MAX 1024
+
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
 int		ft_strjoin_gnl(char **new_line, char *buffer);

@@ -12,7 +12,7 @@
 
 #include "ft_stack.h"
 
-t_node	*ft_init_node(t_data_type data, void (*del)())
+t_node	*ft_init_node(t_data data, void (*del)())
 {
 	t_node	*node;
 
