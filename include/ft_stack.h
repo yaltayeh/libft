@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:34:51 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 07:09:22 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 07:45:51 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ t_stack	*ft_stack_copy_reverse(t_stack *stack);
 
 t_stack	*ft_stack_mapi(t_stack *stack, void *fn);
 
-void	ft_stack_delnode(t_node *node);
+t_node	*ft_stack_delnode(t_node *node);
 void	ft_stack_clear(t_stack **stack);
 
 void	empty_fn(void);

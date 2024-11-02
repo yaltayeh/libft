@@ -6,7 +6,7 @@
 #    By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/02 00:46:54 by yaltayeh          #+#    #+#              #
-#    Updated: 2024/11/02 00:59:14 by yaltayeh         ###   ########.fr        #
+#    Updated: 2024/11/02 07:46:08 by yaltayeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,8 +101,6 @@ LIBFT_SOURCES += \
 		ft_stack/ft_init_node.c				\
 		ft_stack/ft_init_stack.c			\
 		ft_stack/ft_stack_size.c			\
-											\
-		ft_stack/ft_injectors.c				\
 											\
 		ft_stack/ft_stack_head_pop.c		\
 		ft_stack/ft_stack_head_push.c		\

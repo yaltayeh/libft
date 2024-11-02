@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:41:45 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 07:08:34 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 07:44:39 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ static int ft_add_new_node(t_stack *stack, t_node *cur, size_t i)
 	new_data = ft_stack_fn_caller(stack->copy_fn.ptr, stack->data_type, cur->data, i, &err);
 	if (err != 0)
 	{
-		if (cur->del_fn.ptr)
-			ft_stack_fn_caller(cur->del_fn.ptr, stack->data_type, new_data, i, &err);
+		if (stack->del_fn.ptr)
+			ft_stack_fn_caller(stack->del_fn.ptr, stack->data_type, new_data, i, &err);
 		return (err);
 	}
 	new_node = ft_init_node(new_data);
 	if (!new_node)
 	{
 		err = -1;
-		if (cur->del_fn.ptr)
-			ft_stack_fn_caller(cur->del_fn.ptr, stack->data_type, new_data, i, &err);
+		if (stack->del_fn.ptr)
+			ft_stack_fn_caller(stack->del_fn.ptr, stack->data_type, new_data, i, &err);
 		return (err);
 	}
 	ft_stack_tail_push(stack, new_node);
@@ -46,7 +46,7 @@ t_stack	*ft_stack_copy_reverse(t_stack *stack)
 	t_stack		*new_stack;
 	size_t		i;
 
-	new_stack = ft_init_stack(stack->data_type, stack->cmp_fn.ptr, stack->copy_fn.ptr);
+	new_stack = ft_init_stack(stack->data_type, stack->cmp_fn.ptr, stack->copy_fn.ptr, stack->del_fn.ptr);
 	if (!new_stack)
 		return (NULL);
 	i = 0;
