@@ -6,7 +6,7 @@
 #    By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/02 00:46:54 by yaltayeh          #+#    #+#              #
-#    Updated: 2024/11/02 07:46:08 by yaltayeh         ###   ########.fr        #
+#    Updated: 2024/11/02 10:54:03 by yaltayeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,11 +56,9 @@ LIBFT_SOURCES =	\
 		ft_string/ft_substr.c			\
 		ft_string/ft_tolower.c			\
 		ft_string/ft_toupper.c			\
-		ft_string/ft_len.c				\
 		ft_string/ft_strtok.c			\
 		ft_string/ft_atoi.c				\
 		ft_string/ft_atou.c				\
-		ft_string/ft_strcheck.c
 
 LIBFT_SOURCES +=	\
 		ft_memory/ft_bzero.c			\

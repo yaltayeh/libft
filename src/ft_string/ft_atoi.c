@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:54:35 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 00:42:35 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 11:09:28 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ int	ft_atoi_save_r(const char **p_nptr, int *res)
 {
 	const char	*nptr;
 	int			sign;
-	int			num;
 
 	nptr = *p_nptr;
 	while (ft_isspace(*nptr))
@@ -95,16 +94,15 @@ int	ft_atoi_save_r(const char **p_nptr, int *res)
 			sign = -1;
 		nptr++;
 	}
-	num = 0;
+	*res = 0;
 	while (ft_isdigit(*nptr))
 	{
-		if (multi_check_overflow(&num, num, 10))
+		if (multi_check_overflow(res, *res, 10))
 			return (-1);
-		if (add_check_overflow(&num, num, (*nptr - '0') * sign))
+		if (add_check_overflow(res, *res, (*nptr - '0') * sign))
 			return (-1);
 		nptr++;
 	}
 	*p_nptr = nptr;
-	*res = num;
 	return (0);
 }

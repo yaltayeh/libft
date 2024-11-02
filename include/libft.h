@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 21:15:57 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 00:47:40 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 10:53:38 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,6 @@ int		ft_putstr_fd(char *s, int fd);
 int		ft_putendl_fd(char *s, int fd);
 int		ft_putnbr_fd(int n, int fd);
 
-size_t	ft_len(const void **lst);
 char	*ft_strtok(char *s, const char *d);
-int		ft_strcheck(const char *str, int (*f)(int));
 
 #endif

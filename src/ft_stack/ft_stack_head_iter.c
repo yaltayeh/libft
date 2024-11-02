@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:41:56 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 10:08:19 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 11:01:21 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ int	ft_stack_head_iter(t_stack *stack, void *f)
 {
 	t_node	*cur;
 	size_t	i;
-	int		err;
 
 	cur = stack->head;
 	i = 0;
 	while (cur)
 	{
-		ft_stack_fn_caller(f, stack->data_type, cur->data, i, &err);
-		if (err != 0)
-			return (err);
+		stack->i = i;
+		ft_stack_fn_caller(stack, cur, f);
+		if (stack->err != 0)
+			return (stack->err);
 		cur = cur->next;
 		i++;
 	}

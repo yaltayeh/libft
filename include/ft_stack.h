@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:34:51 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 09:33:06 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 11:00:43 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@
 
 typedef union u_data
 {
-	void 			*ptr;
-	long 			i64;
+	void			*ptr;
+	long			i64;
 	int				i32;
 	short			i16;
 	char			i8;
@@ -51,7 +51,7 @@ typedef union u_data
 	double			d64;
 }	t_data;
 
-typedef	union u_func_ptr
+typedef	union	u_func_ptr
 {
 	void	*ptr;
 	int		(*w0)(int, size_t, int *);
@@ -76,15 +76,18 @@ typedef struct s_stack
 	t_func_ptr		cmp_fn;
 	t_func_ptr		copy_fn;
 	t_func_ptr		del_fn;
+	int				err;
+	int				i;
 }	t_stack;
 
 t_node	*ft_init_node(t_data data);
 
-t_stack	*ft_init_stack(int data_type, void *cmp_fn, void *copy_fn, void *del_fn);
+t_stack	*ft_init_stack(int data_type, void *cmp_fn, \
+						void *copy_fn, void *del_fn);
 
 size_t	ft_stack_size(t_stack *stack);
 
-t_data	ft_stack_fn_caller(void *fn, int in_type, t_data in_data, size_t i, int *err);
+t_data	ft_stack_fn_caller(t_stack *stack, t_node *node, void *fn);
 
 void	ft_stack_head_push(t_stack *stack, t_node *node);
 void	ft_stack_tail_push(t_stack *stack, t_node *node);

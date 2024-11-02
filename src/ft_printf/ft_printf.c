@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:40:29 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 00:40:31 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 11:09:47 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_printf(const char *fmt, ...)
 {
 	va_list	ap;
-	int 	ret;
+	int		ret;
 
 	va_start(ap, fmt);
 	ret = ft_vfprintf(1, fmt, &ap);
