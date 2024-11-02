@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:34:51 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 07:45:51 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 08:25:51 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 # include <stdlib.h>
 
-# define FT_W0		(1 << 8)
-# define FT_X0		(2 << 8)
+# define FT_W0		1
+# define FT_X0		2
+# define FT_S0		3
+# define FT_D0		4
 
 # define FT_POINTER			FT_X0
 
@@ -30,6 +32,9 @@
 # define FT_UNSIGNED_SHORT	FT_W0
 # define FT_UNSIGNED_CHAR	FT_W0
 
+# define FT_FLOAT			FT_S0
+# define FT_DOUBLE			FT_D0
+
 typedef union u_data
 {
 	void 			*ptr;
@@ -41,6 +46,8 @@ typedef union u_data
 	unsigned int	u32;
 	unsigned short	u16;
 	unsigned char	u8;
+	float			f32;
+	double			d64;
 }	t_data;
 
 typedef	union u_func_ptr
@@ -48,6 +55,8 @@ typedef	union u_func_ptr
 	void	*ptr;
 	int		(*w0)(int, size_t, int *);
 	void	*(*x0)(void *, size_t, int *);
+	float	(*s0)(float, size_t, int *);
+	double	(*d0)(double, size_t, int *);
 }	t_func_ptr;
 
 typedef struct s_node
@@ -92,7 +101,5 @@ t_stack	*ft_stack_mapi(t_stack *stack, void *fn);
 
 t_node	*ft_stack_delnode(t_node *node);
 void	ft_stack_clear(t_stack **stack);
-
-void	empty_fn(void);
 
 #endif
