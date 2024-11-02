@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:34:51 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 08:25:51 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 09:33:06 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_STACK_H
 
 # include <stdlib.h>
+# include <stdio.h>
 
 # define FT_W0		1
 # define FT_X0		2

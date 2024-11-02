@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:41:50 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 07:45:31 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 10:08:47 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ t_stack	*ft_stack_copy(t_stack *stack)
 			return (NULL);
 		}
 		cur = cur->next;
+		i++;
 	}
 	return (new_stack);
 }

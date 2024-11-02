@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:41:38 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 00:41:41 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 10:49:35 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ void	ft_stack_clear(t_stack **stack)
 		return ;
 	
 	while ((*stack)->head)
+	{
+		(*stack)->head->parent = *stack;
 		ft_stack_delnode((*stack)->head);
+	}
 	free(*stack);
 	*stack = NULL;
 }

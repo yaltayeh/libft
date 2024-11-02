@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:36:08 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 08:29:12 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 10:50:52 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ t_student	*copy_sudent(t_student *student, size_t i, int *err)
 	return (new_student);
 }
 
-float	add_multi_0_5(float num)
+double	add_multi_0_5(double num)
 {
 	return (num * 0.5f);
 }
 
-void print_item(float value, size_t i)
+void print_item(double value, size_t i)
 {
-	printf("%.3f, ", value);
+	printf("%4.1f, ", value);
 	if ((i + 1) % 20 == 0)
 		printf("\n");
 }
@@ -55,8 +55,8 @@ int main()
 	t_stack	*stack2;
 	t_node	*node;
 
-	stack1 = ft_init_stack(FT_FLOAT, NULL, add_multi_0_5, NULL);
-	for (float i = 0; i < 50; i += 1.3)
+	stack1 = ft_init_stack(FT_DOUBLE, NULL, add_multi_0_5, NULL);
+	for (double i = 0; i < 50; i += 2.98)
 	{
 		node = ft_init_node((t_data)i);
 		ft_stack_tail_push(stack1, node);
