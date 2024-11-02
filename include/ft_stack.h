@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:34:51 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 11:00:43 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 22:11:54 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,10 @@ typedef	union	u_func_ptr
 	void	*(*x0)(void *, size_t, int *);
 	float	(*s0)(float, size_t, int *);
 	double	(*d0)(double, size_t, int *);
+	int		(*cmp_w0)(int, int, int *);
+	int		(*cmp_x0)(void *, void *, int *);
+	int		(*cmp_s0)(float, float, int *);
+	int		(*cmp_d0)(double, double, int *);
 }	t_func_ptr;
 
 typedef struct s_node
@@ -88,6 +92,7 @@ t_stack	*ft_init_stack(int data_type, void *cmp_fn, \
 size_t	ft_stack_size(t_stack *stack);
 
 t_data	ft_stack_fn_caller(t_stack *stack, t_node *node, void *fn);
+int		ft_cmp_node(t_node *node1, t_node *node2, int *res);
 
 void	ft_stack_head_push(t_stack *stack, t_node *node);
 void	ft_stack_tail_push(t_stack *stack, t_node *node);

@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 00:25:04 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 00:40:09 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 22:16:10 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ size_t	ft_pointer_handle(t_printf_data data)
 			return (0);
 		str = ft_strjoin("0x", hex);
 		free(hex);
-		if (!str)
-			return (0);
 	}
+	if (!str)
+		return (0);
 	count = ft_strlen(str);
 	if (data.flags & NUMBER && !(data.flags & MINUS))
 		count += ft_blank_apply(data.numbers[0], count, data.fd);

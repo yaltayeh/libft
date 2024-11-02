@@ -6,7 +6,7 @@
 #    By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/02 00:46:54 by yaltayeh          #+#    #+#              #
-#    Updated: 2024/11/02 10:54:03 by yaltayeh         ###   ########.fr        #
+#    Updated: 2024/11/02 22:12:33 by yaltayeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,6 +108,7 @@ LIBFT_SOURCES += \
 		ft_stack/ft_stack_tail_pop.c		\
 		ft_stack/ft_stack_tail_iter.c		\
 											\
+		ft_stack/ft_cmp_node.c				\
 		ft_stack/ft_stack_fn_caller.c		\
 		ft_stack/ft_stack_copy_reverse.c	\
 		ft_stack/ft_stack_copy.c			\
