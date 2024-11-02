@@ -6,13 +6,13 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 07:23:27 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 00:41:30 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 07:10:22 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-t_node	*ft_init_node(t_data data, void (*del)())
+t_node	*ft_init_node(t_data data)
 {
 	t_node	*node;
 
@@ -20,7 +20,6 @@ t_node	*ft_init_node(t_data data, void (*del)())
 	if (!node)
 		return (NULL);
 	node->data = data;
-	node->del = del;
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);

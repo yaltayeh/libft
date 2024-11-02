@@ -6,13 +6,13 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:42:04 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 00:42:05 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 01:22:53 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-t_stack	*ft_stack_mapi(t_stack *stack, int (*f)())
+t_stack	*ft_stack_mapi(t_stack *stack, void *f)
 {
 	t_stack		*new_stack;
 	int			err;

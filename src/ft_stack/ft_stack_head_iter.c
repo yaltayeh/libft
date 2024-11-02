@@ -6,13 +6,13 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:41:56 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 00:41:57 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/02 01:14:40 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-int	ft_stack_head_iter(t_stack *stack, int (*f)())
+int	ft_stack_head_iter(t_stack *stack, void *f)
 {
 	t_node	*cur;
 	size_t	i;
@@ -22,13 +22,7 @@ int	ft_stack_head_iter(t_stack *stack, int (*f)())
 	i = 0;
 	while (cur)
 	{
-		if (stack->data_type == FT_W0)
-			ft_inject_data_w0(cur->data.i32, i);
-		else if (stack->data_type == FT_X0)
-			ft_inject_data_x0(cur->data.ptr, i);
-		else
-			return (-1);
-		err = f();
+		ft_stack_fn_caller(f, stack->data_type, cur->data, i, &err);
 		if (err != 0)
 			return (err);
 		cur = cur->next;

@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_injectors.c                                     :+:      :+:    :+:   */
+/*   ft_stack_fn_caller.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 00:41:35 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 00:41:37 by yaltayeh         ###   ########.fr       */
+/*   Created: 2024/11/02 00:41:42 by yaltayeh          #+#    #+#             */
+/*   Updated: 2024/11/02 01:13:31 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
-void	ft_inject_data_w0(int w0, size_t i, int *err)
+t_data	ft_stack_fn_caller(void *fn, int in_type, t_data in_data, size_t i, int *err)
 {
-	(void)w0;
-	(void)i;
-	(void)err;
-}
+	t_data		out_data;
+	t_func_ptr	fn_ptr;
 
-void	ft_inject_data_x0(void *x0, size_t i, int *err)
-{
-	(void)x0;
-	(void)i;
-	(void)err;
+	*err = 0;
+	fn_ptr.ptr = fn;
+	out_data.ptr = NULL;
+	if (in_type == FT_W0)
+		out_data.i32 = fn_ptr.w0(in_data.i32, i, err);
+	else if (in_type == FT_X0)
+		out_data.ptr = fn_ptr.x0(in_data.ptr, i, err);
+	else
+		*err = -1;
+	return (out_data);
 }
