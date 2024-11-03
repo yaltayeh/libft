@@ -6,7 +6,7 @@
 #    By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/02 00:46:54 by yaltayeh          #+#    #+#              #
-#    Updated: 2024/11/02 22:12:33 by yaltayeh         ###   ########.fr        #
+#    Updated: 2024/11/03 14:38:07 by yaltayeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ LIBFT_SOURCES =	\
 		ft_string/ft_strlen.c	 		\
 		ft_string/ft_strmapi.c			\
 		ft_string/ft_strncmp.c			\
+		ft_string/ft_strcmp.c			\
 		ft_string/ft_strnstr.c			\
 		ft_string/ft_strrchr.c			\
 		ft_string/ft_strtrim.c			\

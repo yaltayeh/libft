@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 21:15:57 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 10:53:38 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/03 14:37:03 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int		ft_atoi_save_r(const char **p_nptr, int *res);
 size_t	ft_atou(const char *nptr);
 size_t	ft_atou_r(const char **p_nptr);
 
+int		ft_strcmp(const char *s1, const char *s2n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 void	*ft_calloc(size_t nmemb, size_t size);
