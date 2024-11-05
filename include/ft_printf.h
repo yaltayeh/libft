@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 20:02:23 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 08:10:40 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/06 01:15:40 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ typedef struct s_printf_data
 	int			fd;
 }	t_printf_data;
 
-
 int		ft_vprintf(const char *fmt, va_list	*ap);
 
 int		ft_printf(const char *fmt, ...) \
@@ -54,7 +53,6 @@ int		ft_fprintf(int fd, const char *fmt, ...) \
 		__attribute__((format(printf, 2, 3)));
 
 int		ft_vfprintf(int fd, const char *fmt, va_list *ap);
-
 
 t_flags	ft_flags_parser(const char **fmt, size_t *numbers, t_flags flags);
 
@@ -73,47 +71,3 @@ size_t	ft_hex_handle(t_printf_data data, int upper);
 size_t	ft_percent_handle(t_printf_data data);
 
 #endif
-
-
-
-/*
-
-1111
-0101
-1010
-0001
-
-0- 1010
-1- 1111 0101 0001
-
-1010
-1111
-0101
-0001
-
-0- 0101 0001
-1- 1010 1111
-
-0101
-0001
-1010
-1111
-
-0- 0001 1010
-1- 0101 1111
-
-0001
-1010
-0101
-1111
-
-0- 0001 0101
-1- 1010 1111
-
-0001
-0101
-1010
-1111
-
-
-*/

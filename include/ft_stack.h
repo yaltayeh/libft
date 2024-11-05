@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:34:51 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/06 00:56:32 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/06 01:15:09 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef union u_data
 	double			d64;
 }	t_data;
 
-typedef	union	u_func_ptr
+typedef union u_func_ptr
 {
 	void	*ptr;
 	int		(*w0)(int, size_t, int *);
