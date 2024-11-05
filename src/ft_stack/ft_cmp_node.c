@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:49:10 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/06 00:55:20 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/06 01:07:12 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_cmp_data(t_stack *stack, t_data data1, t_data data2, int *res)
 	int			err;
 
 	err = 0;
+	cmp_fn = stack->cmp_fn;
 	if (stack->data_type == FT_W0)
 		*res = cmp_fn.cmp_w0(data1.i32, data2.i32, &err);
 	else if (stack->data_type == FT_X0)
