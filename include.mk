@@ -6,7 +6,7 @@
 #    By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/02 00:46:54 by yaltayeh          #+#    #+#              #
-#    Updated: 2024/11/03 14:38:07 by yaltayeh         ###   ########.fr        #
+#    Updated: 2024/11/06 00:59:26 by yaltayeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,6 +114,8 @@ LIBFT_SOURCES += \
 		ft_stack/ft_stack_copy_reverse.c	\
 		ft_stack/ft_stack_copy.c			\
 		ft_stack/ft_stack_mapi.c			\
+											\
+		ft_stack/ft_stack_search.c			\
 											\
 		ft_stack/ft_stack_delnode.c			\
 		ft_stack/ft_stack_clear.c			\

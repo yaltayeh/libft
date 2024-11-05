@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 00:34:51 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/02 22:11:54 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/06 00:56:32 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ size_t	ft_stack_size(t_stack *stack);
 
 t_data	ft_stack_fn_caller(t_stack *stack, t_node *node, void *fn);
 int		ft_cmp_node(t_node *node1, t_node *node2, int *res);
+int		ft_cmp_data(t_stack *stack, t_data data1, t_data data2, int *res);
 
 void	ft_stack_head_push(t_stack *stack, t_node *node);
 void	ft_stack_tail_push(t_stack *stack, t_node *node);
@@ -107,6 +108,8 @@ t_stack	*ft_stack_copy(t_stack *stack);
 t_stack	*ft_stack_copy_reverse(t_stack *stack);
 
 t_stack	*ft_stack_mapi(t_stack *stack, void *fn);
+
+int		ft_stack_search(t_stack *stack, t_data data, t_node **res);
 
 t_node	*ft_stack_delnode(t_node *node);
 void	ft_stack_clear(t_stack **stack);
