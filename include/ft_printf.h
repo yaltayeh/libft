@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 20:02:23 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/06 01:15:40 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/07 00:21:17 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ int		ft_fprintf(int fd, const char *fmt, ...) \
 		__attribute__((format(printf, 2, 3)));
 
 int		ft_vfprintf(int fd, const char *fmt, va_list *ap);
+
+int	ft_snprintf(char *str, size_t size, const char *format, ...) \
+		__attribute__((format(printf, 3, 4)));
 
 t_flags	ft_flags_parser(const char **fmt, size_t *numbers, t_flags flags);
 

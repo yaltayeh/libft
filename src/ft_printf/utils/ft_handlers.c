@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 00:25:04 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/06 01:17:17 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/07 00:16:54 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ size_t	ft_pointer_handle(t_printf_data data)
 		hex = ft_itoa_base(addr, HEX_BASE);
 		if (!hex)
 			return (0);
-		str = ft_strjoin("0x", hex);
+		str = ft_strjoin(2, "0x", hex);
 		free(hex);
 	}
 	if (!str)
