@@ -6,7 +6,7 @@
 #    By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/02 00:46:54 by yaltayeh          #+#    #+#              #
-#    Updated: 2024/11/06 00:59:26 by yaltayeh         ###   ########.fr        #
+#    Updated: 2024/11/07 00:21:52 by yaltayeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,6 +84,7 @@ LIBFT_SOURCES += \
 		ft_printf/ft_fprintf.c					\
 		ft_printf/ft_vprintf.c					\
 		ft_printf/ft_vfprintf.c					\
+		ft_printf/ft_snprintf.c					\
 		ft_printf/utils/ft_printf_redirect.c	\
 		ft_printf/utils/ft_flags_parser.c		\
 		ft_printf/utils/ft_handlers.c			\
