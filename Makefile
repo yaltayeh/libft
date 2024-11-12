@@ -6,7 +6,7 @@
 #    By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/02 00:46:59 by yaltayeh          #+#    #+#              #
-#    Updated: 2024/11/02 00:46:59 by yaltayeh         ###   ########.fr        #
+#    Updated: 2024/11/12 15:48:20 by yaltayeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	= libft.a
 
 # Compiler settings
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g
 
 # Set colors variables
 RESET	= \033[0;39m
