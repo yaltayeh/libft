@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 21:15:57 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/07 00:16:40 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/15 15:45:29 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(int count, ...);
 char	*ft_strtrim(char const *s1, char const *set);
-char	**ft_split(const char *s, char *delimiters);
 char	*ft_itoa(int n, int with_sign);
 char	*ft_itoa_base(unsigned long n, char *base_sym);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
