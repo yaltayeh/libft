@@ -6,7 +6,7 @@
 #    By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/02 00:46:54 by yaltayeh          #+#    #+#              #
-#    Updated: 2024/11/07 00:21:52 by yaltayeh         ###   ########.fr        #
+#    Updated: 2024/11/15 16:27:46 by yaltayeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,6 @@ LIBFT_SOURCES =	\
 		ft_string/ft_isspace.c			\
 		ft_string/ft_itoa.c				\
 		ft_string/ft_itoa_base.c		\
-		ft_string/ft_split.c			\
 		ft_string/ft_strchr.c			\
 		ft_string/ft_strdup.c			\
 		ft_string/ft_striteri.c			\
