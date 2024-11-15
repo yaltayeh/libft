@@ -6,7 +6,7 @@
 #    By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/02 00:46:59 by yaltayeh          #+#    #+#              #
-#    Updated: 2024/11/12 15:48:20 by yaltayeh         ###   ########.fr        #
+#    Updated: 2024/11/15 18:06:16 by yaltayeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,8 +41,8 @@ $(NAME): $(OBJECTS)
 # Clean all object files only
 clean:
 	@rm -f $(OBJECTS) \
-		&& echo "$(YELLOW)LIBFTPRINTF: remove all object files$(RESET)"\
-		|| echo "$(RED)LIBFTPRINTF: Can't remove object files$(RESET)"
+		&& echo "$(YELLOW)LIBFT: remove all object files$(RESET)"\
+		|| echo "$(RED)LIBFT: Can't remove object files$(RESET)"
 
 # Clean all object files and archives file
 fclean: clean
