@@ -6,7 +6,7 @@
 /*   By: yaltayeh <yaltayeh@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 21:15:57 by yaltayeh          #+#    #+#             */
-/*   Updated: 2024/11/15 15:45:29 by yaltayeh         ###   ########.fr       */
+/*   Updated: 2024/11/16 13:21:35 by yaltayeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdarg.h>
 # include <limits.h>
 # include "ft_printf.h"
-# include "ft_stack.h"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
