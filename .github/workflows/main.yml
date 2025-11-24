@@ -41,4 +41,4 @@ jobs:
             const failed = Number("${{ steps.compile.outputs.failed }}");
             const total = success + failed;
 
-            const body = test
+            const body = "test"
