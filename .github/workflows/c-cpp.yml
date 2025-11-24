@@ -1,0 +1,25 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    ft_calloc:
+    - uses: actions/checkout@v4
+    - name: compile
+      run: cc ft_calloc.c -c -o ft_calloc.o
+    ft_split:
+    - uses: actions/checkout@v4
+    - name: compile
+      run: cc ft_split.c -c -o ft_split.o
+    ft_strlcpy:
+    - uses: actions/checkout@v4
+    - name: compile
+      run: cc ft_strlcpy.c -c -o ft_strlcpy.o
+    ft_substr:
+    - uses: actions/checkout@v4
+    - name: compile
+      run: cc ft_substr.c -c -o ft_substr.o
