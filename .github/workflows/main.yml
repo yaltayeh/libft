@@ -1,8 +1,10 @@
-name: C/C++ CI
+name: C Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
+  pull_request:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,18 +13,54 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Compile ft_calloc
-        run: cc ft_calloc.c -c -o ft_calloc.o
-        continue-on-error: true
+      - name: Compile files and count results
+        id: compile
+        run: |
+          success=0
+          failed=0
 
-      - name: Compile ft_split
-        run: cc ft_split.c -c -o ft_split.o
-        continue-on-error: true
+          for file in ft_calloc.c ft_split.c ft_strlcpy.c ft_substr.c; do
+            echo "Compiling $file ..."
+            if cc "$file" -c -o "${file%.c}.o"; then
+              echo "✔ Success: $file"
+              success=$((success+1))
+            else
+              echo "✖ Failed: $file"
+              failed=$((failed+1))
+            fi
+          done
 
-      - name: Compile ft_strlcpy
-        run: cc ft_strlcpy.c -c -o ft_strlcpy.o
-        continue-on-error: true
+          echo "success=$success" >> $GITHUB_OUTPUT
+          echo "failed=$failed" >> $GITHUB_OUTPUT
 
-      - name: Compile ft_substr
-        run: cc ft_substr.c -c -o ft_substr.o
-        continue-on-error: true
+      - name: Comment results on GitHub
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const success = Number("${{ steps.compile.outputs.success }}");
+            const failed = Number("${{ steps.compile.outputs.failed }}");
+            const total = success + failed;
+
+            const body = `
+### 🧪 C Build Results
+✔ **Success:** ${success}/${total}  
+✖ **Failed:** ${failed}/${total}
+`;
+
+            // If PR → comment on PR
+            if (context.payload.pull_request) {
+              github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: body
+              });
+            } else {
+              // Otherwise comment on commit
+              github.rest.repos.createCommitComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                commit_sha: context.sha,
+                body: body
+              });
+            }
